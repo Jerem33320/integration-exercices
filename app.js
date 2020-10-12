@@ -3,17 +3,23 @@ const imgDot = document.createElement("img");
 const src = document.getElementById("phone-center");
 
 img.src = schoesData[0].image;
+// img.id = schoesData[0].id;
 img.classList.add("transitionEffectShow");
 img.style.height = '280px';
 src.appendChild(img);
 
-function changeSchoesOnClick(number){
+function changeSchoesOnFooterClick(id){
   src.removeChild(img);
-  img.src = schoesData[number].image;
+  img.src = schoesData[id].image;
+  img.id = schoesData[id].id;
   img.classList.add("transitionEffectShow");
   src.appendChild(img);
 
-  imgDot.src = schoesData[number].dot;
+  img.onclick = function () {
+    location.href = `${schoesData[id].name}.html`;
+  }
+
+  imgDot.src = schoesData[id].dot;
   imgDot.style.position = 'absolute';
   imgDot.style.height = "110px";
   imgDot.style.top = "-16%";
@@ -28,16 +34,16 @@ function addEventListenerByClass(className) {
 
         switch(e.target.id) {
           case "falcon":
-            changeSchoesOnClick(0);
+            changeSchoesOnFooterClick(0);
           break;
           case "nike-black":
-            changeSchoesOnClick(1);
+            changeSchoesOnFooterClick(1);
           break;
           case "nike-white":
-            changeSchoesOnClick(2);
+            changeSchoesOnFooterClick(2);
           break;
           case "nike-m2k":
-            changeSchoesOnClick(3);
+            changeSchoesOnFooterClick(3);
           break;
           default:
             console.log("ERROR while clicking shoes in the phone footer")
@@ -46,4 +52,4 @@ function addEventListenerByClass(className) {
   }
 }
 
-addEventListenerByClass('shoes-footer'); 
+addEventListenerByClass('shoes-footer');

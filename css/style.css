@@ -26,6 +26,11 @@
   justify-content: space-between;
 }
 
+.homeLink{
+  text-decoration: none;
+  color: white;
+}
+
 /* ------------PHONE----------- */
 .phoneDemo{
   width: 100%;
@@ -79,7 +84,7 @@
   to {   
     transform: translateX(0) rotate3d(0, 0, 0, 0deg);
     perspective: 800;
-     opacity:1;  
+    opacity:1;  
   }
 }
 
