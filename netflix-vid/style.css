@@ -8,15 +8,13 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 /* ---------NAV---------------------- */
 nav {
   /* padding: 10px; */
   width: 100%;
-  font-size: 70%;
+  height: 40px;
+  font-size: .6rem;
   position: absolute;
   background-color: black;
   color: white;
@@ -25,7 +23,6 @@ nav {
   align-items: center;
   z-index: 1;
   font-family: "open-sans", sans-serif;
-  height: 40px;
 }
 
 #b_left {
@@ -129,6 +126,12 @@ li div {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar { 
+  display: none; 
 }
 
 .video-netflix{
