@@ -8,6 +8,9 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /* ---------NAV---------------------- */
 nav {
@@ -37,7 +40,6 @@ nav {
   display: flex;
   justify-content: space-around;
 }
-
 
 #logo {
   max-width: 12%;
@@ -115,6 +117,7 @@ li div {
   font-family: "open-sans", sans-serif;
   font-size: .6rem;
   padding-left: 4%;
+  padding-bottom: 4%;
 }
 
 .videos-container {
