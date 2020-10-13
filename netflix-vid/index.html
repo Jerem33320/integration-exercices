@@ -8,7 +8,36 @@
 </head>
 <body>
   <div class="container">
-    <nav></nav>
+    <nav>
+      <div id="b_left">
+        <img id="logo" src="./images/Logo_Netflix.png" alt="logo netflix">
+        <ul>
+            <li>Accueil</li>
+            <li>Séries</li>
+            <li>Films</li>
+            <li>Nouveautés</li>
+            <li>Ma liste</li>
+        </ul>
+    </div>
+    <div id="b_right">
+        <ul>
+            <li>
+                <img src="./images/loupe.png" alt="loupe" class="ico"></li>
+            <li>
+                <img src="./images/gift.png" alt="cadeau" class="ico"></li>
+            <li>
+                <img src="./images/bel.png" alt="cloche" class="ico"></li>
+            <li id="profile">
+                <div>
+                    <img src="images/gohan.jpg" alt="photo profile" class="ico">
+                </div>
+                <div>
+                    <img src="images/arrow.png" alt="flèche du bas" id="arrow">
+                </div>
+            </li>
+        </ul>
+      </div>
+    </nav>
     <section class="section-center">
       <div id="image-center"></div>
       <div class="center">
@@ -26,10 +55,15 @@
             alt="forbidden-age">
         </div>
       </div>
-      <div class="images-bottom"></div>
     </section>
-    <footer></footer>
+    <footer class="videos-bottom">
+      <h1>Les plus gros succès sur Netflix</h1>
+      <div class="videos-container">
+        <div class="videos-list"></div>
+      </div>
+    </footer>
   </div>
   <script src="./app.js"></script>
+  <script src="./animated-videos.js"></script>
 </body>
 </html>
