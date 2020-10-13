@@ -18,3 +18,4 @@ for(let i = 0; i < movieData.length; i++){
   vid.style.width = '270px';
   videosList.appendChild(vid);
 }
+

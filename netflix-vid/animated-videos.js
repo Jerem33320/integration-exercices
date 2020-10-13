@@ -10,3 +10,4 @@ for(let vid of allVideos) {
     e.target.pause()
   }, false);
 }
+

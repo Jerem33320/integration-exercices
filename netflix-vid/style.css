@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -43,7 +48,7 @@ nav {
 }
 
 #b_right {
-  width: 30%;
+  width: 24%;
   display: flex;
   justify-content: space-around;
 }
@@ -86,7 +91,7 @@ li div {
 
 .center {
   position: relative;
-  top: 42%;
+  top: 40%;
   padding: 4%;
 
   display: flex;
@@ -114,6 +119,10 @@ li div {
   font-size: .6rem;
   padding-left: 4%;
   bottom: 12px;
+}
+
+#success-movies{
+  padding-bottom: 10px;
 }
 
 .videos-container {
