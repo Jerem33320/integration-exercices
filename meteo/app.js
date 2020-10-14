@@ -19,6 +19,7 @@ const app = new function(){
   this.secSection = document.querySelector('.sec-section');
   this.weatherDiv = document.querySelector('.weather-sec-section');
   //----THIRD SECTION
+  this.thirdSection = document.querySelector('.third-section');
 
   this.getToday = function() {
     const d = new Date();
@@ -101,6 +102,12 @@ const app = new function(){
         let futurDays = this.createSecSectionDiv(data.list[i].dt_txt, futurIcon, Math.floor(data.list[i].main.temp) + '°');
         newWeatherDiv.innerHTML = futurDays;
         this.secSection.appendChild(newWeatherDiv);
+
+        const weatherDivThirdSection = document.createElement('div');
+        weatherDivThirdSection.classList.add('weather-third-section');
+        let thirdSectionFuturDays = this.createThirdSectionDiv(data.list[i].dt_txt, futurIcon, Math.floor(data.list[i].main.temp_max) + '°', Math.floor(data.list[i].main.temp_min) + '°');
+        weatherDivThirdSection.innerHTML = thirdSectionFuturDays;
+        this.thirdSection.appendChild(weatherDivThirdSection);
       }
     })
     .catch(err => console.log('Request Failed', err));
@@ -114,6 +121,15 @@ const app = new function(){
       </div>
       <div id="secSection-temp">${temp}</div>
     `;
+  }
+
+  this.createThirdSectionDiv = function(day, icon, tempMax, tempMin){
+    return `
+      <div>${day}</div>
+      <div><img src="${icon}" alt="img-weather"></div> 
+      <div>${tempMax}</div>
+      <div>${tempMin}</div>
+    `
   }
 }
 
