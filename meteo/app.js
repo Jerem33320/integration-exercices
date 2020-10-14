@@ -1,6 +1,3 @@
-const CITY = "Paris";
-const API = "a53af32d6d0eefb218dd3478d2375a5c";
-
 const app = new function(){
   
   this.container = document.querySelector('.container');
@@ -92,7 +89,7 @@ const app = new function(){
     .then(res => res.json())
     .then(data => {
       // for(let i = 0; i < data.list.length; i++){
-      for(let i = 0; i < 5; i++){
+      for(let i = 0; i < 7; i++){
 
         let futurIcon = `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
 
