@@ -91,9 +91,8 @@ const app = new function(){
     fetch('http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&lang=fr&APPID=a53af32d6d0eefb218dd3478d2375a5c')
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      for(let i = 0; i < data.list.length; i++){
-        console.log(data.list[i]);
+      // for(let i = 0; i < data.list.length; i++){
+      for(let i = 0; i < 5; i++){
 
         let futurIcon = `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
 
@@ -116,7 +115,7 @@ const app = new function(){
   this.createSecSectionDiv = function(day, icon, temp){
     return `
       <div>${day}</div>
-      <div id="actual-weather-icon">
+      <div>
         <img src="${icon}" alt="img-weather">
       </div>
       <div id="secSection-temp">${temp}</div>
