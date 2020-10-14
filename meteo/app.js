@@ -64,7 +64,7 @@ const app = new function(){
     fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&lang=fr&APPID=a53af32d6d0eefb218dd3478d2375a5c')
     .then(res => res.json())
     .then(data => {
-      // console.log(data);
+      console.log(data);
       // ----HEADER
       this.getBackgroundImg(data);
       this.city.innerHTML = data.name;
@@ -80,39 +80,39 @@ const app = new function(){
       actualIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       this.actualWeatherIcon.appendChild(actualIcon);
       this.secSectionTemp.innerHTML = Math.floor(data.main.temp) + '°';
-      // this.getFuturWeather();
+      this.getFuturWeather();
       //----THIRD SECTION
     })
     .catch(err => console.log('Request Failed', err));
   }
 
   // this.getFuturWeather = function(){
-  //   fetch('http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&lang=fr&APPID=a53af32d6d0eefb218dd3478d2375a5c')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     console.log(data);
-  //     for(let i = 0; i < data.list.length; i++){
-  //       console.log(data.list[i]);
-  //       // this.weatherDiv.append(data.list[i].weather[0].description);
-  //       // const actualIcon = document.createElement('img');
-  //       // actualIcon.src = `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
-  //       let futurDays = this.createSecSectionDiv(data.list[i].dt_txt, "Icon", Math.floor(data.list[i].main.temp));
-  //       console.log('futur: ' + futurDays);
-  //       this.weatherDiv.append(futurDays);
-  //     }
-  //   })
-  //   .catch(err => console.log('Request Failed', err));
-  // }
+    fetch('http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&lang=fr&APPID=a53af32d6d0eefb218dd3478d2375a5c')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      for(let i = 0; i < data.list.length; i++){
+        console.log(data.list[i]);
+        // this.weatherDiv.append(data.list[i].weather[0].description);
+        // const actualIcon = document.createElement('img');
+        // actualIcon.src = `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
+        let futurDays = this.createSecSectionDiv(data.list[i].dt_txt, "Icon", Math.floor(data.list[i].main.temp));
+        console.log('futur: ' + futurDays);
+        this.weatherDiv.append(futurDays);
+      }
+    })
+    .catch(err => console.log('Request Failed', err));
+  
 
-  // this.createSecSectionDiv = function(day, icon, temp){
-  //   return `
-  //   <div class="weather-sec-section">
-  //     <div>${day}</div>
-  //     <div id="actual-weather-icon">${icon}</div>
-  //     <div id="secSection-temp">${temp}</div>
-  //   </div>
-  //   `;
-  // }
+  this.createSecSectionDiv = function(day, icon, temp){
+    return `
+    <div class="weather-sec-section">
+      <div>${day}</div>
+      <div id="actual-weather-icon">${icon}</div>
+      <div id="secSection-temp">${temp}</div>
+    </div>
+    `;
+  }
 }
 
 app.fetchAll();
