@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOVIES</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="navbar">
+      <div class="left-nav">
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="The Movie Database (TMDb)" width="154" height="20">
+        <div>Films</div>
+        <div>Séries</div>
+        <div>Artistes</div>
+        <div>Plus</div>
+      </div>
+      <div class="right-nav">
+        <div>+</div>
+        <div>FR</div>
+        <div>Connection</div>
+        <div>RejoindreTMDb</div>
+        <div>🍿</div>
+      </div>
+    </header>
+    <section class="discover">
+      <div class="titles">
+        <h1 class="title">Bienvenue sur TMDb,</h1>
+        <h2 class="sub-title">Des millions de films, séries et artistes à découvrir...</h2>
+      </div>
+      <div class="search-div">
+        <form id="search-form">
+          <input id="search-input" type="text" placeholder="Rechercher un film, une série, un artiste......">
+          <button id="search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+    <section class="movies">
+      <div class="find-your-movie">
+        <h3>Populaires</h3>
+        <div class="selector-wrap">
+          <div class="selector">
+            <a href="#">Tous</a>
+          </div>
+          <div class="selector">
+            <a href="#">A la télé</a>
+          </div>
+          <div class="selector">
+            <a href="#">A louer</a>
+          </div>
+          <div class="selector">
+            <a href="#">Au cinéma</a>
+          </div>
+        </div>
+      </div>
+      <div class="movies-content">
+        <div class="scroll-movies">
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="JS/app.js"></script>
+</body>
+</html>

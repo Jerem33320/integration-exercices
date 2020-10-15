@@ -1,0 +1,166 @@
+/* 
+navbarlogo
+<img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="The Movie Database (TMDb)" width="154" height="20">
+
+sous la navbar
+background-image: linear-gradient(to right, rgba(var(--tmdbDarkBlue), 0.8) 0%, rgba(var(--tmdbDarkBlue), 0) 100%), url('//image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/ghQrKrcEpAlkzBuNoOCSxHQXWqw.jpg'); */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Open-Sans", sans-serif;
+  color: white;
+}
+/* ----HEADER---- */
+.navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(3,37,65, 1);
+  height: 64px;
+  width: 100vw;
+}
+
+.left-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.right-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+/* ----SECTION1---- */
+.discover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: 100vw;
+  background-image: linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url('//image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/ghQrKrcEpAlkzBuNoOCSxHQXWqw.jpg');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.titles{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+.title{
+  font-size: 3rem;
+}
+
+.sub-title {
+  font-size: 2rem;
+}
+
+#search-form{
+  margin-top: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#search-input{
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 1.1em;
+  color: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  outline: none;
+}
+#search-btn{
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 46px;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  background: linear-gradient(to right, rgba(192,254,207, 1) 0%, rgba(1,180,228, 1) 100%);
+}
+/* ----SECTION2---- */
+.movies{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: calc(100% - 364px);
+  color: black;
+}
+
+.find-your-movie{
+  display: flex;
+  flex-direction: row;
+}
+
+.find-your-movie h3 {
+  margin-left: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.selector-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 20px;
+  width: 50%;
+}
+
+.selector-wrap a {
+  text-decoration: none;
+  color: black;
+}
+
+.selected {
+  background: linear-gradient(to right, rgba(192,254,207, 1) 0%, rgba(30,213,169, 1) 100%);
+    background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: -webkit-text-fill-color 0.5s;
+  color: rgba(3,37,65, 1);
+}
+
+.scroll-movies{
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+}
+
+.movie-div {
+  width: 154px;
+  margin-left: 10px;
+}
+
+.movie-div img {
+  border-radius: 10px;
+}
