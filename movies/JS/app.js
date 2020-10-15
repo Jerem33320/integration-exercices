@@ -34,7 +34,8 @@ const app = new function(){
           if(e.target.value === data.results[i].title){
             this.btnSearch.onclick = function(e) {
               e.preventDefault();
-              location.href = `./movieID.html?${data.results[i].title}?${data.results[i].overview}`;
+              const imageMovieForParam = `https://image.tmdb.org/t/p/w154'${data.results[i].poster_path}`;
+              location.href = `./movieID.html?${data.results[i].title}?${data.results[i].overview}?${imageMovieForParam}`;
               // location.href = `https://api.themoviedb.org/3/movie/${data.results[i].id}?api_key=87dfa1c669eea853da609d4968d294be&language=en-US`;
             }
           } else {
