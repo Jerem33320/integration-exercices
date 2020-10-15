@@ -1,10 +1,13 @@
 const moviePage = new function(){
   this.movieTitle = document.getElementById('movie-title');
+  this.movieDescription = document.getElementById('movie-description');
 
-  this.getTitle = function(){
-    const param = location.search.substring(1);
-    const afterRegexTitle = this.escapeRegExp(param);
+  this.getMovie = function(){
+    const paramTitle = location.search.substring(1).split("?");
+    const afterRegexTitle = this.escapeRegExp(paramTitle[0]);
+    const afterRegexDescription = this.escapeRegExp(paramTitle[1])
     this.movieTitle.append(afterRegexTitle);
+    this.movieDescription.append(afterRegexDescription);
   }
 
   this.escapeRegExp = function(string) {
@@ -12,4 +15,4 @@ const moviePage = new function(){
   }
 }
 
-moviePage.getTitle()
+moviePage.getMovie();

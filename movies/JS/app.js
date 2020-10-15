@@ -30,10 +30,11 @@ const app = new function(){
       this.inputSearch.addEventListener('change', function(e){
         this.btnSearch = document.getElementById('search-btn');
         for(let i = 0; i < data.results.length; i++){
+          console.log(data.results);
           if(e.target.value === data.results[i].title){
             this.btnSearch.onclick = function(e) {
               e.preventDefault();
-              location.href = `./movieID.html?${data.results[i].title}`;
+              location.href = `./movieID.html?${data.results[i].title}?${data.results[i].overview}`;
               // location.href = `https://api.themoviedb.org/3/movie/${data.results[i].id}?api_key=87dfa1c669eea853da609d4968d294be&language=en-US`;
             }
           } else {
