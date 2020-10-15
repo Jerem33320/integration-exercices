@@ -13,6 +13,7 @@ const moviePage = new function(){
     console.log(afterRegexImage);
     const movieImg = document.createElement('img');
     movieImg.src = afterRegexImage;
+    movieImg.style.width = "200px";
 
     this.movieTitle.append(afterRegexTitle);
     this.movieDescription.append(afterRegexDescription);

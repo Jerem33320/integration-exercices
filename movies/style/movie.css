@@ -1,17 +1,43 @@
 .movie{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   height: calc(100vh - 64px);
   padding: 20px;
+  background-color:rgb(3, 37, 65, 0.8);
+}
+
+.movie-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  height: calc(100vh - 104px); /*à cause du padding de la class movie*/
+}
+
+#movie-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: calc(100vh - 104px);
+  background-color: aliceblue;
 }
 
 #movie-title{
-  color: black;
+  font-size: 2rem;
+  color: white;
+  font-family: 'Piedra', cursive;
+  border-bottom: 1px solid white;
+  padding-bottom: 50px;
 }
 
 #movie-description{
-  color: black;
+  font-size: 1rem;
+  color: white;
+  height: 50%;
+  line-height: 2rem;
+  padding-right: 14px;
 }
