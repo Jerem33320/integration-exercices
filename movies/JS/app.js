@@ -1,6 +1,6 @@
 const app = new function(){
-  const MOVIE_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=87dfa1c669eea853da609d4968d294be&language=en-US&page=1`;
   const CONFIG_URL = `https://api.themoviedb.org/3/configuration?api_key=87dfa1c669eea853da609d4968d294be&language=en-US`;
+  const MOVIES_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=87dfa1c669eea853da609d4968d294be&language=en-US&page=1`;
 
   this.scrollMovies = document.querySelector('.scroll-movies');
   this.selectors = document.querySelectorAll('.selector');
@@ -19,7 +19,7 @@ const app = new function(){
   }
 
   this.fetchAll = function(){
-    fetch(MOVIE_URL)
+    fetch(MOVIES_URL)
     .then(res => res.json())
     .then(data => {
       // this.config();
@@ -32,12 +32,12 @@ const app = new function(){
         this.btnSearch = document.getElementById('search-btn');
         for(let i = 0; i < data.results.length; i++){
           if(e.target.value === data.results[i].title){
-            console.log(data.results[i].title);
-            this.btnSearch.onclick = function () {
-              location.href = `movieID.html`;
+            this.btnSearch.onclick = function(e) {
+              e.preventDefault();
+              location.href = './movieID.html';
             }
           } else {
-            console.log('ERROR: input not selected or wrong id movie')
+            console.log('ERROR: input not selected or wrong name movie')
           }
         }
       })
