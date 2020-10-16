@@ -1,6 +1,7 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+const db = firebase.database().ref('/todos/');
 
 document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodo);
@@ -17,11 +18,11 @@ function addTodo(e) {
   newTodo.innerText = todoInput.value;
 
   saveLocalTodos(todoInput.value);
-  console.log(firebase);
-  const key = firebase.database().ref('/todos/').set({
-    todo: todoInput.value
-  })
-  console.log(key);
+
+  db.child(todoInput.value).set({
+    id: Math.floor(Math.random() * 999999),
+    name: todoInput.value
+  });
   
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
@@ -42,6 +43,8 @@ function deleteTodo(e) {
     const todo = item.parentElement.parentElement;
     todo.classList.add("fall");
     removeLocalTodos(todo);
+
+    db.child(todo.textContent).remove();
   }
 }
 
