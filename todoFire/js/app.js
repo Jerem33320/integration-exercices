@@ -43,6 +43,9 @@ function deleteTodo(e) {
     const todo = item.parentElement.parentElement;
     todo.classList.add("fall");
     removeLocalTodos(todo);
+    setTimeout(() => {
+      todo.classList.add("displayNone");
+    }, 1000);
 
     db.child(todo.textContent).remove();
   }
